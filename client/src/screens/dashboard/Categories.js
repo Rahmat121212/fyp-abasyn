@@ -1,5 +1,5 @@
 import {useEffect} from "react"
-import {Link, useParams} from "react-router-dom"
+import {Link, useParams} from "r eact-router-dom"
 import { useSelector, useDispatch } from "react-redux";
 import ScreenHeader from "../../components/ScreenHeader";
 import Wrapper from "./Wrapper"

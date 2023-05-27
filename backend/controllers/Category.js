@@ -8,8 +8,6 @@ class Category {
   async create(req, res) {
     const form = formidable({ multiples: true });
     form.parse(req, async (err, fields, files) => {
-      if (!err) {
-        console.log("DAta--->", fields);
       console.log("fields--------->", fields);
       if (!err) {
         // const parsedData = JSON.parse(fields);
@@ -66,7 +64,6 @@ class Category {
         } else {
           return res.status(400).json({ errors });
         }
->>>>>>> 2349aeceab7d63ca875476188a5b3829fb3a4a61
       }
     });
   }

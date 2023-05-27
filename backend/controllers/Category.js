@@ -2,23 +2,12 @@ const { validationResult } = require("express-validator");
 const CatgoryModel = require("../models/Category");
 class Category {
   async create(req, res) {
-    const errors = validationResult(req);
-    const { name } = req.body;
-    if (errors.isEmpty()) {
-      const exist = await CatgoryModel.findOne({ name });
-      if (!exist) {
-        await CatgoryModel.create({ name });
-        return res
-          .status(201)
-          .json({ message: "Your category has created successfully!" });
-      } else {
-        return res
-          .status(400)
-          .json({ errors: [{ msg: `${name} category is already exist` }] });
+    const form = formidable({ multiples: true });
+    form.parse(req, async (err, fields, files) => {
+      if (!err) {
+        console.log("DAta--->", fields);
       }
-    } else {
-      return res.status(400).json({ errors: errors.array() });
-    }
+    });
   }
   async categories(req, res) {
     const page = req.params.page;

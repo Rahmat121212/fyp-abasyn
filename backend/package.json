@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon index.js",
-    "dev": "concurrently \" npm run server \" \" npm start --prefix ../client \""
+    "server": "nodemon index.js -q",
+    "start": "concurrently \" npm run server \" \" npm start --prefix ../client \""
   },
   "keywords": [],
   "author": "",

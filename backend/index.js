@@ -22,7 +22,7 @@ app.post(
 );
 // add middleware
 app.use(express.json());
-
+console.log("kkkkkk");
 app.get("/", (req, res) => {
   res.json({ msg: "Welcome to chawkbazar" });
 });

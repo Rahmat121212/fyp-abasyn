@@ -16,11 +16,11 @@ const categoryService = createApi({
   endpoints: (builder) => {
     return {
       create: builder.mutation({
-        query: (name) => {
+        query: (data) => {
           return {
             url: "create-category",
             method: "POST",
-            body: name,
+            body: data,
           };
         },
         invalidatesTags: ["categories"],

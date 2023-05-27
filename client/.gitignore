@@ -1,2 +1,5 @@
-cd
+# Skip environment files
+.env
+
+# Skip node_modules directory
 node_modules/

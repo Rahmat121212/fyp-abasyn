@@ -6,6 +6,7 @@ import Wrapper from "./Wrapper";
 import { useCreateMutation } from "../../store/services/categoryService";
 import { setSuccess } from "../../store/reducers/globalReducer";
 const CreateCategory = () => {
+<<<<<<< HEAD
   const [state, setState] = useState({
     name:"",
     image :""
@@ -18,15 +19,22 @@ const CreateCategory = () => {
 const handleInput = e => {
     setState({...state, [e.target.name]: e.target.value})
 }
+=======
+  const [state, setState] = useState("");
+>>>>>>> 2349aeceab7d63ca875476188a5b3829fb3a4a61
   const [saveCategory, data] = useCreateMutation();
   console.log(data);
   const errors = data?.error?.data?.errors ? data?.error?.data?.errors : [];
   const submitCategory = (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     const formData = new FormData();
     formData.append('data', JSON.stringify(state));
     formData.append('image', state.image)
     saveCategory(formData);
+=======
+    saveCategory({ name: state });
+>>>>>>> 2349aeceab7d63ca875476188a5b3829fb3a4a61
   };
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -58,6 +66,7 @@ const handleInput = e => {
             className="form-control"
             placeholder="Category Name..."
             value={state}
+<<<<<<< HEAD
             onChange={handleInput}
           />
         </div>
@@ -71,6 +80,9 @@ const handleInput = e => {
             id="image"
             className="input-file"
             onChange={imageHandle}
+=======
+            onChange={(e) => setState(e.target.value)}
+>>>>>>> 2349aeceab7d63ca875476188a5b3829fb3a4a61
           />
         </div>
         <div className="mb-3">
